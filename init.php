@@ -17,9 +17,6 @@ $lifecycle->loadZests();
 // --- Loading Error/Exception handlers ---
 $lifecycle->loadHandler();
 
-// --- Loading commands ---
-$lifecycle->loadCommands();
-
 $lifecycle->get('config')->load();
 
 /** @var \Lemon\Routing\Router $router */

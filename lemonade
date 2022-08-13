@@ -4,4 +4,7 @@
 /** @var \Lemon\Kernel\Lifecycle $lifecycle */
 $lifecycle = include __DIR__.'/init.php';
 
+// --- Loading commands ---
+$lifecycle->loadCommands();
+
 $lifecycle->get('terminal')->run(array_slice($argv, 1));
