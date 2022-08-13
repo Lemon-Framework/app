@@ -1,0 +1,7 @@
+#!/usr/bin/php
+<?php
+
+/** @var \Lemon\Kernel\Lifecycle $lifecycle */
+$lifecycle = include __DIR__.'/init.php';
+
+$lifecycle->get('terminal')->run(array_slice($argv, 1));
