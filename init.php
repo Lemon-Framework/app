@@ -3,24 +3,24 @@
 include __DIR__.'/vendor/autoload.php';
 
 use Lemon\Http\Middlewares\Cors;
-use Lemon\Kernel\Lifecycle;
+use Lemon\Kernel\Application;
 use Lemon\Protection\Middlwares\Csrf;
 
-$lifecycle = new Lifecycle(__DIR__);
+$application = new Application(__DIR__);
 
 // --- Loading default Lemon services ---
-$lifecycle->loadServices();
+$application->loadServices();
 
 // --- Loading Zests for services ---
-$lifecycle->loadZests();
+$application->loadZests();
 
 // --- Loading Error/Exception handlers ---
-$lifecycle->loadHandler();
+$application->loadHandler();
 
-$lifecycle->get('config')->load();
+$application->get('config')->load();
 
 /** @var \Lemon\Routing\Router $router */
-$router = $lifecycle->get('routing');
+$router = $application->get('routing');
 
 $router->file('routes.web')
     ->middleware(Csrf::class)
@@ -31,4 +31,4 @@ $router->file('routes.api')
     ->middleware(Cors::class)
 ;
 
-return $lifecycle;
+return $application;

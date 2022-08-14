@@ -9,10 +9,10 @@ if (file_exists($maintenance)) {
     die();
 }
 
-/** @var \Lemon\Kernel\Lifecycle $lifecycle */
-$lifecycle = include __DIR__.'/../init.php';
+/** @var \Lemon\Kernel\Application $application */
+$application = include __DIR__.'/../init.php';
 
-$lifecycle->add(Request::class, Request::capture());
-$lifecycle->alias('request', Request::class);
+$application->add(Request::class, Request::capture());
+$application->alias('request', Request::class);
 
-$lifecycle->boot();
+$application->boot();
