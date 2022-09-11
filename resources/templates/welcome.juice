@@ -5,6 +5,6 @@
     <title></title>
 </head>
 <body>
-    Welcome to Lemon Framework version {{ \Lemon\Kernel\Lifecycle::VERSION }}!
+    Welcome to Lemon Framework version {{ \Lemon\Kernel\Application::VERSION }}!
 </body>
 </html>
