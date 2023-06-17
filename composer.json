@@ -1,5 +1,7 @@
 {
     "name": "lemon_framework/app",
+    "description": "Lemon Framework base app",
+    "type": "project",
     "require": {
         "lemon_framework/lemon": "^3.16"
     },
